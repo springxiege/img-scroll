@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+<title>box图片滚动插件</title>
+</head>
+<style>
+#box {
+	width: 1050px;
+	height: 200px;
+	overflow: hidden
+}
+.box-img {
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin-right: 10px
+}
+.box-img img {
+	display: block;
+	width: 200px;
+	height: 200px;
+	border: none
+}
+</style>
+<body>
+<div id="box">
+	<div class="box-img"><img src="images/1.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/2.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/3.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/4.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/5.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/6.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/1.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/2.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/3.jpg" alt="" /></div>
+	<div class="box-img"><img src="images/4.jpg" alt="" /></div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.itemlst.min.js"></script>
+<script>
+$(function() {
+	$("#box").box({
+		move_num: 4, //表示滚动元素的数量
+		display_num:5, //表示正常显示元素的数量
+		margin_num:10, //表示滚动元素之间的右边距
+		speed:300, //表示滚动元素的速度，值越小，速度越快，反之则越慢
+		times:3, //表示自动滚动元素的间隔时间，这是以秒为单位来计算
+		Dom:"div", //表示获取对象元素，以用来后面获取元素的宽度(默认为滚动元素)
+		prev:"#xg-prev", //表示获取上一页按钮
+		next:"#xg-next", //表示获取下一页按钮
+		element:".box-img", //表示滚动的元素，可以传递div、也可以传递li标签、也可以传递一个类如：(.box-img)
+		auto:true, //判断是否自动滚动，true为自动
+		allWidth:0,				//在显示图片区域的宽度上额外可视区宽度
+		btn:"block"     //是否显示默认按钮 block为显示,none为不显示
+	})	
+})
+</script>
+</html>
